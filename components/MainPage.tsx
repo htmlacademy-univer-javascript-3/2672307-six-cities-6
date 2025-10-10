@@ -90,6 +90,7 @@ function MainPage(props: IMainPage) {
       </div>
       <div className="page page--gray page--main">
         <header className="header">
+          <h1>{ props.city }</h1>
           <div className="container">
             <div className="header__wrapper">
               <div className="header__left">

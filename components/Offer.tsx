@@ -501,3 +501,6 @@ export function Offer() {
 
   )
 }
+
+
+export default Offer;

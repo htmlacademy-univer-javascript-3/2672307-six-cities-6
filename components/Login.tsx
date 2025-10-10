@@ -1,6 +1,6 @@
 
 
-export function Login() {
+function Login() {
   return (
     <>
       <meta charSet="utf-8" />
@@ -95,3 +95,5 @@ export function Login() {
 
   )
 }
+
+export default Login;
