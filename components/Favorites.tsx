@@ -1,6 +1,6 @@
 
 
-export function Favorites() {
+function Favorites() {
   return (
     <>
       <meta charSet="utf-8" />
@@ -260,3 +260,6 @@ export function Favorites() {
 
   )
 }
+
+
+export default Favorites;
