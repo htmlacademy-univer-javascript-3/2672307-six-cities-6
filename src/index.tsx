@@ -40,12 +40,13 @@ root.render(
         <Route index element={<App {...DataForApp} />}/>
         <Route path='login' element={<Login />} />
         <Route path='offer/:id' element={<Offer />} />
+
         <Route path='favorites' element={
           <PrivateRoute>
             <Favorites />
           </PrivateRoute>
-
-        } />
+        }
+        />
       </Route>
 
       <Route path='*' element={<NotFound />} />
