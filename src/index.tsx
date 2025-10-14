@@ -1,7 +1,18 @@
-import React from 'react';
+//import React from 'react';
 import ReactDOM from 'react-dom/client';
+
 import App from '../components/MainPage';
 import { IApp } from '../components/MainPage';
+import Favorites from '../components/Favorites';
+import Login from '../components/Login';
+import NotFound from '../components/NotFound';
+import Offer from '../components/Offer';
+import Layout from '../components/Layout';
+import GoAway from '../components/GoAway';
+
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import PrivateRoute from '../components/PrivateRoute';
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -22,7 +33,24 @@ export const DataForApp: IApp = {
 };
 
 root.render(
-  <React.StrictMode>
-    <App {...DataForApp} />
-  </React.StrictMode>
+  <BrowserRouter>
+    <Routes>
+
+      <Route path='/' element={<Layout/>}>
+        <Route index element={<App {...DataForApp} />}/>
+        <Route path='login' element={<Login />} />
+        <Route path='offer/:id' element={<Offer />} />
+
+        <Route path='favorites' element={
+          <PrivateRoute>
+            <Favorites />
+          </PrivateRoute>
+        }
+        />
+      </Route>
+
+      <Route path='*' element={<NotFound />} />
+      <Route path='go-away' element={<GoAway />} />
+    </Routes>
+  </BrowserRouter>
 );
