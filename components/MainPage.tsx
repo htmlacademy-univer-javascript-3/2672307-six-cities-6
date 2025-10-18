@@ -1,5 +1,5 @@
 import { OfferType } from "../src/mocks/offers"
-import { PlaceCard } from "./PlaceCard"
+//import { PlaceCard } from "./PlaceCard"
 import { OffersList } from "./OffersList"
 
 interface IMainPage {

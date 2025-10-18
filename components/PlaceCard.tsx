@@ -1,5 +1,6 @@
-import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
+//import ReactDOM from 'react-dom/client';
+import { Link } from 'react-router-dom';
+//import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import { OfferType } from "../src/mocks/offers"
 

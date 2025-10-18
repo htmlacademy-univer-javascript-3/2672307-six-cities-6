@@ -10,7 +10,7 @@ export function CommentForm() {
   )
 
   const handleRatingChange = (evt: ChangeEvent<HTMLInputElement>) => {
-    const { id, value } = evt.target
+    const { id } = evt.target
     const starsQuantity = parseInt(id.charAt(0), 10)
     setFormData({ ...FormData, stars: starsQuantity })
   }
