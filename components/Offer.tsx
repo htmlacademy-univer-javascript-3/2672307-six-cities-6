@@ -1,4 +1,4 @@
-
+import {CommentForm} from './CommentForm'
 
 export function Offer() {
   return (
@@ -237,7 +237,7 @@ export function Offer() {
                       </div>
                     </li>
                   </ul>
-                  <form className="reviews__form form" action="#" method="post">
+                  {/* <form className="reviews__form form" action="#" method="post">
                     <label className="reviews__label form__label" htmlFor="review">
                       Your review
                     </label>
@@ -345,7 +345,8 @@ export function Offer() {
                         Submit
                       </button>
                     </div>
-                  </form>
+                  </form> */}
+                  <CommentForm />
                 </section>
               </div>
             </div>
