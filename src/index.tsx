@@ -14,7 +14,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import PrivateRoute from '../components/PrivateRoute';
 
 import {offers} from './mocks/offers';
-import {OfferType} from './mocks/offers';
+//import {OfferType} from './mocks/offers';
 
 
 const root = ReactDOM.createRoot(
