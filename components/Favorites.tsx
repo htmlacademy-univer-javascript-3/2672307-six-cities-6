@@ -1,6 +1,11 @@
+import { OffersList } from "./OffersList"
+import { OfferType } from "../src/mocks/offers"
 
+type IFavorites = {
+  offers: OfferType[]
+}
 
-function Favorites() {
+function Favorites(props: IFavorites) {
   return (
     <>
       <meta charSet="utf-8" />
@@ -86,7 +91,7 @@ function Favorites() {
                     </div>
                   </div>
                   <div className="favorites__places">
-                    <article className="favorites__card place-card">
+                    {/* <article className="favorites__card place-card">
                       <div className="place-card__mark">
                         <span>Premium</span>
                       </div>
@@ -180,7 +185,8 @@ function Favorites() {
                         </h2>
                         <p className="place-card__type">Room</p>
                       </div>
-                    </article>
+                    </article> */}
+                    <OffersList offers = {props.offers} />
                   </div>
                 </li>
                 <li className="favorites__locations-items">
