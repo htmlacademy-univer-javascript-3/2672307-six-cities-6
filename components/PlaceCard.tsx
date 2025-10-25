@@ -1,13 +1,25 @@
 //import ReactDOM from 'react-dom/client';
 import { Link } from 'react-router-dom';
 //import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { MouseEvent } from 'react';
+import { OfferType } from "../src/mocks/offers";
 
-import { OfferType } from "../src/mocks/offers"
+type PlaceCardProps = {
+  offerType: OfferType,
+  onListItemHover: (name: string) => void
+}
 
+export function PlaceCard(props: PlaceCardProps) {
 
-export function PlaceCard(props: OfferType) {
+  const { offerType, onListItemHover } = props;
+
+  const handleListItemHover = (event: MouseEvent<HTMLLIElement>) => {
+    event.preventDefault();
+    onListItemHover(offerType.name);
+  };
+
   return (
-    <article className="cities__card place-card">
+    <article onMouseEnter={handleListItemHover} className="cities__card place-card">
       <div className="cities__image-wrapper place-card__image-wrapper">
         {/* <a href="#">
           <img
@@ -31,7 +43,7 @@ export function PlaceCard(props: OfferType) {
       <div className="place-card__info">
         <div className="place-card__price-wrapper">
           <div className="place-card__price">
-            <b className="place-card__price-value">€{props.price}</b>
+            <b className="place-card__price-value">€{offerType.price}</b>
             <span className="place-card__price-text">
               /&nbsp;night
             </span>

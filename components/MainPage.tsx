@@ -1,18 +1,34 @@
 import { OfferType } from "../src/mocks/offers"
+import { useState } from 'react';
+//import { POINTS } from "../src/mocks/points"
+import { City } from "../src/types/types"
 //import { PlaceCard } from "./PlaceCard"
 import { OffersList } from "./OffersList"
+import Map from "./Map"
+import { Points, Point } from "../src/types/types"
 
 interface IMainPage {
   mail: string,
   cartQuantity: number
-  city: string
+  city: City
   numberOfOffers: number
   CardsInfo?: ICard[]
   offers: OfferType[]
+  points: Points
 }
 
 
 function MainPage(props: IMainPage) {
+
+  const [selectedPoint, setSelectedPoint] = useState<Point | undefined>(
+    undefined
+  );
+
+  const handleListItemHover = (listItemName: string) => {
+    const currentPoint = props.points.find((point) => point.title === listItemName);
+
+    setSelectedPoint(currentPoint);
+  };
 
   return (
     <>
@@ -43,7 +59,7 @@ function MainPage(props: IMainPage) {
       </div>
       <div className="page page--gray page--main">
         <header className="header">
-          <h1>{ props.city }</h1>
+          <h1>{ props.city.title }</h1>
           <div className="container">
             <div className="header__wrapper">
               <div className="header__left">
@@ -158,11 +174,14 @@ function MainPage(props: IMainPage) {
                   <PlaceCard {...props.offers[3]} />
                 </div> */}
 
-                <OffersList offers = {props.offers} />
+                <OffersList onListItemHover={handleListItemHover} points={props.points} offers = {props.offers} />
 
               </section>
               <div className="cities__right-section">
-                <section className="cities__map map" />
+                  {/* <section className="cities__map map">
+
+                </section> */}
+                <Map city={props.city} points={props.points} selectedPoint={selectedPoint} />
               </div>
             </div>
           </div>
@@ -183,10 +202,11 @@ export interface ICard {
 export interface IApp {
   mail: string,
   cartQuantity: number
-  city: string
+  city: City
   numberOfOffers: number
   CardsInfo?: ICard[]
   offers: OfferType[];
+  points: Points
 }
 
 export default function App(props: IApp) {

@@ -186,7 +186,7 @@ function Favorites(props: IFavorites) {
                         <p className="place-card__type">Room</p>
                       </div>
                     </article> */}
-                    <OffersList offers = {props.offers} />
+                    <OffersList onListItemHover={() => {}} points={[]} offers = {props.offers} />
                   </div>
                 </li>
                 <li className="favorites__locations-items">
