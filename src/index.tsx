@@ -13,9 +13,10 @@ import GoAway from '../components/GoAway';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import PrivateRoute from '../components/PrivateRoute';
 
-import {offers} from './mocks/offers';
-//import {OfferType} from './mocks/offers';
-
+import { offers } from './mocks/offers';
+import { City } from './types/types';
+import { CITY } from './mocks/city';
+import { POINTS } from './mocks/points';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -23,7 +24,7 @@ const root = ReactDOM.createRoot(
 
 const mail: string = 'email@mail.com';
 const cartQuantity: number = 2;
-const city: string = 'Amsterdam';
+const city = CITY;
 const numberOfOffers: number = 5;
 
 // let CardsInfo: ICard[];
@@ -31,9 +32,10 @@ const numberOfOffers: number = 5;
 export const DataForApp: IApp = {
   mail: mail,
   cartQuantity: cartQuantity,
-  city: city,
+  city: CITY,
   numberOfOffers: numberOfOffers,
   offers: offers,
+  points: POINTS,
 };
 
 root.render(
