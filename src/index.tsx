@@ -14,7 +14,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import PrivateRoute from '../components/PrivateRoute';
 
 import { offers } from './mocks/offers';
-import { City } from './types/types';
+//import { City } from './types/types';
 import { CITY } from './mocks/city';
 import { POINTS } from './mocks/points';
 
@@ -24,7 +24,7 @@ const root = ReactDOM.createRoot(
 
 const mail: string = 'email@mail.com';
 const cartQuantity: number = 2;
-const city = CITY;
+//const city = CITY;
 const numberOfOffers: number = 5;
 
 // let CardsInfo: ICard[];

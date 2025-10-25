@@ -1,4 +1,4 @@
-import { MouseEvent } from 'react';
+//import { MouseEvent } from 'react';
 import { OfferType } from "../src/mocks/offers"
 import { PlaceCard } from "./PlaceCard"
 import { Points } from '../src/types/types';
@@ -13,7 +13,7 @@ export type OffersListProps = {
 export function OffersList(props: OffersListProps) {
   //const [numberOfActiveElements, setActiveElement] = useState(0);
 
-  const { points, onListItemHover } = props;
+  const { onListItemHover } = props;
 
   const handleListItemHover = (name: string) => {
     onListItemHover(name);

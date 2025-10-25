@@ -1,5 +1,5 @@
 import { useRef, useEffect } from 'react';
-import { POINTS } from "../src/mocks/points";
+//import { POINTS } from "../src/mocks/points";
 import { Icon, Marker, layerGroup } from 'leaflet';
 import { City, Points, Point } from '../src/types/types';
 import useMap from '../src/hooks/use-map';

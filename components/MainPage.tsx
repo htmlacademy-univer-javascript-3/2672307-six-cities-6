@@ -1,6 +1,6 @@
 import { OfferType } from "../src/mocks/offers"
-import React, { useState } from 'react';
-import { POINTS } from "../src/mocks/points"
+import { useState } from 'react';
+//import { POINTS } from "../src/mocks/points"
 import { City } from "../src/types/types"
 //import { PlaceCard } from "./PlaceCard"
 import { OffersList } from "./OffersList"
