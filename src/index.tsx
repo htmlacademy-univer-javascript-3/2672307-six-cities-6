@@ -13,6 +13,9 @@ import GoAway from '../components/GoAway';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import PrivateRoute from '../components/PrivateRoute';
 
+import {offers} from './mocks/offers';
+//import {OfferType} from './mocks/offers';
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -30,6 +33,7 @@ export const DataForApp: IApp = {
   cartQuantity: cartQuantity,
   city: city,
   numberOfOffers: numberOfOffers,
+  offers: offers,
 };
 
 root.render(
@@ -43,7 +47,7 @@ root.render(
 
         <Route path='favorites' element={
           <PrivateRoute>
-            <Favorites />
+            <Favorites offers={offers} />
           </PrivateRoute>
         }
         />
