@@ -7,7 +7,7 @@ const offersNames: string[] = [
   'House in a forest',
   'Sights from the heart of the city',
   'Quiet place with TV'
-]
+];
 
 const initialState = {
   cityName: 'Wood and stone place',
