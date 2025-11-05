@@ -18,6 +18,9 @@ import { offers } from './mocks/offers';
 import { CITY } from './mocks/city';
 import { POINTS } from './mocks/points';
 
+import { Provider } from 'react-redux';
+import { store } from './store';
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
@@ -42,8 +45,10 @@ root.render(
   <BrowserRouter>
     <Routes>
 
-      <Route path='/' element={<Layout/>}>
-        <Route index element={<App {...DataForApp} />}/>
+      <Route path='/' element={<Layout />}>
+        <Provider store={store}>
+          <Route index element={<App {...DataForApp} />} />
+        </Provider>
         <Route path='login' element={<Login />} />
         <Route path='offer/:id' element={<Offer />} />
 
