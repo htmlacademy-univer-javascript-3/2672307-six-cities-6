@@ -15,6 +15,10 @@ export const POINTS = [
     title: 'Quiet place with TV',
     lat: 52.3809553943508,
     lng: 4.939309666406198,
+  }, {
+    title: 'Quiet place without TV',
+    lat: 52.52525252525252,
+    lng: 67.67676767676767,
   },
 ];
 
